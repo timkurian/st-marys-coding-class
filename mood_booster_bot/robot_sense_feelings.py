@@ -27,11 +27,24 @@ def handle_feeling(feeling):
         elif feeling in feelings['ok']:
             print('Reach for the stars!' )
         elif feeling in feelings['bad']:
-            print(f'Oh, sorry to hear you are feeling {feeling} ')
+             print(f'Oh, sorry to hear you are feeling {feeling} , Lets check your temperature ')
+             temperature = input('what is your temperature?')
+             check_temperature(temperature)
         else:
             category = input(f'I do not know what {feeling} is. Is it good / bad or ok ?')
             handle_new_feeling(feeling, category)
-           
+
+def check_temperature(temperature)  :
+          temp = float(temperature)
+          
+          if temp > 39:
+              print(f'Oh No - you have a high temperature, you may need some medicine and rest')
+          elif temp > 38:
+              print(f'You have a mild temperature! Take Rest now')
+          elif temp > 36.4:
+              print('Your temperature is good')
+          else:
+              print('Your temperature is too cold?')
    
 while True:
         name = input('> What is your name?')
